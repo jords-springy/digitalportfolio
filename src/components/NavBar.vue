@@ -40,5 +40,61 @@
   </script>
   
   <style lang="css">
-  /* no need to add anything here */
-  </style>
+.navbar {
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-nav {
+  flex-direction: column;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.2rem 0.5rem;
+  }
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .navbar {
+    padding: 0.1rem 0.2rem;
+  }
+  .navbar-brand {
+    font-size: 0.8rem;
+  }
+  .nav-link {
+    font-size: 0.6rem;
+  }
+}
+</style>
