@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-light bg-body-tertiary py-3 fixed-top mb-0">
+    <nav class="navbar navbar-light bg-light py-3 fixed-top mb-0">
       <div class="container-fluid">
         <a href="#home">
           <img src="https://jords-springy.github.io/hostedimages/images/mainlogo.jpg" alt="main logo" style="opacity: 0.8; height: 50px; border-color: black;">
@@ -20,14 +20,6 @@
         </div>
       </div>
     </nav>
-  
-    <!-- Add sections with IDs that match the link targets -->
-    <section id="home">Home section content</section>
-    <section id="about">About section content</section>
-    <section id="resume">Resume section content</section>
-    <section id="projects">Projects section content</section>
-    <section id="testimonial">Testimonial section content</section>
-    <section id="contact">Contact section content</section>
   </template>
   
   <script>
@@ -48,5 +40,5 @@
   </script>
   
   <style lang="css">
-  /* Your existing styles */
+    /* Your existing styles */
   </style>
