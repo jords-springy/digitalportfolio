@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-light bg-body-tertiary py-3 fixed-top mb-0">
       <div class="container-fluid">
-        <a href="#">
+        <a href="#home">
           <img src="https://jords-springy.github.io/hostedimages/images/mainlogo.jpg" alt="main logo" style="opacity: 0.8; height: 50px; border-color: black;">
         </a>
   
@@ -14,12 +14,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item" v-for="(link, index) in links" :key="index">
-              <router-link class="nav-link" :to="link.to" :aria-current="link.to === '/' ? 'page' : null">{{ link.text }}</router-link>
+              <a class="nav-link" :href="`#${link.to}`">{{ link.text }}</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+  
+    <!-- Add sections with IDs that match the link targets -->
+    <section id="home">Home section content</section>
+    <section id="about">About section content</section>
+    <section id="resume">Resume section content</section>
+    <section id="projects">Projects section content</section>
+    <section id="testimonial">Testimonial section content</section>
+    <section id="contact">Contact section content</section>
   </template>
   
   <script>
@@ -27,12 +35,12 @@
     data() {
       return {
         links: [
-          { text: 'HOME', to: '/' },
-          { text: 'ABOUT', to: '/about' },
-          { text: 'RESUME', to: '/resume' },
-          { text: 'PROJECTS', to: '/projects' },
-          { text: 'TESTIMONIAL', to: '/testimonial' },
-          { text: 'CONTACT', to: '/contact' },
+          { text: 'HOME', to: 'home' },
+          { text: 'ABOUT', to: 'about' },
+          { text: 'RESUME', to: 'resume' },
+          { text: 'PROJECTS', to: 'projects' },
+          { text: 'TESTIMONIAL', to: 'testimonial' },
+          { text: 'CONTACT', to: 'contact' },
         ],
       };
     },
@@ -40,61 +48,5 @@
   </script>
   
   <style lang="css">
-.navbar {
-  padding: 1rem 2rem;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-}
-
-.navbar-toggler {
-  border: none;
-}
-
-.navbar-nav {
-  flex-direction: column;
-}
-
-.nav-link {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
-  .nav-link {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.2rem 0.5rem;
-  }
-  .navbar-brand {
-    font-size: 1rem;
-  }
-  .nav-link {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .navbar {
-    padding: 0.1rem 0.2rem;
-  }
-  .navbar-brand {
-    font-size: 0.8rem;
-  }
-  .nav-link {
-    font-size: 0.6rem;
-  }
-}
-</style>
+  /* Your existing styles */
+  </style>
