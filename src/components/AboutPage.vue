@@ -118,4 +118,82 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin-left: 300px; 
   }
-  </style>
+
+  /* For screens larger than 1200px */
+  @media (min-width: 1200px) {
+    .about-section {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-size: 3rem;
+    }
+    .section-description {
+      font-size: 1.3rem;
+    }
+    .about-section img {
+      height: 400px;
+      width: 400px;
+      margin-left: 350px;
+    }
+  }
+
+  /* For screens between 768px and 1200px */
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .about-section {
+      padding: 60px 0;
+    }
+    .section-title {
+      font-size: 2.5rem;
+    }
+    .section-description {
+      font-size: 1.2rem;
+    }
+    .about-section img {
+      height: 350px;
+      width: 350px;
+      margin-left: 250px;
+    }
+  }
+
+  /* For screens smaller than 768px */
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 40px 0;
+    }
+    .section-title {
+      font-size: 2rem;
+    }
+    .section-description {
+      font-size: 1.1rem;
+    }
+    .about-section img {
+      height: 250px;
+      width: 250px;
+      margin-left: 150px;
+    }
+  }
+
+  /* For screens smaller than 300px */
+  @media (max-width: 300px) {
+    .about-section {
+      padding: 20px 0;
+    }
+    .section-title {
+      font-size: 1.5rem;
+    }
+    .section-description {
+      font-size: 1rem;
+    }
+    .about-section img {
+      height: 150px;
+      width: 150px;
+      margin-left: 50px;
+    }
+    .row {
+      flex-direction: column;
+    }
+    .col-md-6 {
+      width: 100%;
+    }
+  }
+</style>
