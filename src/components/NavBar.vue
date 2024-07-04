@@ -27,12 +27,12 @@
     data() {
       return {
         links: [
-          { text: 'HOME', to: 'home' },
-          { text: 'ABOUT', to: 'about' },
-          { text: 'RESUME', to: 'resume' },
-          { text: 'PROJECTS', to: 'projects' },
-          { text: 'TESTIMONIAL', to: 'testimonial' },
-          { text: 'CONTACT', to: 'contact' },
+          { text: 'HOME', to: '/' },
+          { text: 'ABOUT', to: '/about' },
+          { text: 'RESUME', to: '/resume' },
+          { text: 'PROJECTS', to: '/projects' },
+          { text: 'TESTIMONIAL', to: '/testimonial' },
+          { text: 'CONTACT', to: '/contact' },
         ],
       };
     },
