@@ -82,4 +82,68 @@
     width: 100%;
     margin: 0 auto;
   }
+
+  /* For screens larger than 1200px */
+@media (min-width: 1200px) {
+ .education-section {
+    padding: 80px 0;
+  }
+ .education-section__title {
+    font-size: 3rem;
+  }
+ .education-section__content {
+    font-size: 1.3rem;
+  }
+ .card {
+    width: 1000px;
+  }
+}
+
+/* For screens between 768px and 1200px */
+@media (min-width: 768px) and (max-width: 1200px) {
+ .education-section {
+    padding: 60px 0;
+  }
+ .education-section__title {
+    font-size: 2.5rem;
+  }
+ .education-section__content {
+    font-size: 1.2rem;
+  }
+ .card {
+    width: 800px;
+  }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+ .education-section {
+    padding: 40px 0;
+  }
+ .education-section__title {
+    font-size: 2rem;
+  }
+ .education-section__content {
+    font-size: 1.1rem;
+  }
+ .card {
+    width: 600px;
+  }
+}
+
+/* For screens smaller than 300px */
+@media (max-width: 300px) {
+ .education-section {
+    padding: 20px 0;
+  }
+ .education-section__title {
+    font-size: 1.5rem;
+  }
+ .education-section__content {
+    font-size: 1rem;
+  }
+ .card {
+    width: 400px;
+  }
+}
   </style>
