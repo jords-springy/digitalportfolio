@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="work-section">
+      <div class="work-section" data-aos="zoom-out-up" data-aos-duration="1500">
         <h2 class="section-title">Work Experience</h2>
         <div v-for="(experience, index) in workExperienceData" :key="index">
           {{ experience.description }}
