@@ -5,6 +5,7 @@
      <NavBar/>
      <landing-page/>
      <about-page/>
+     <education-comp/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 import NavBar from '@/components/NavBar.vue';
 import LandingPage from '@/components/LandingPage.vue';
 import AboutPage from '@/components/AboutPage.vue';
+import EducationComp from '@/components/EducationComp.vue';
 
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
@@ -22,6 +24,7 @@ export default {
     NavBar,
     LandingPage,
     AboutPage,
+    EducationComp,
   }
   // name: 'HomeView',
   // components: {
