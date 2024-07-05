@@ -8,6 +8,7 @@
      <education-comp/>
      <work-comp/>
      <skills-comp/>
+     <project-page/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import AboutPage from '@/components/AboutPage.vue';
 import EducationComp from '@/components/EducationComp.vue';
 import WorkComp from '@/components/WorkComp.vue';
 import SkillsComp from '@/components/SkillsComp.vue';
+import ProjectPage from '@/components/ProjectPage.vue';
 
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
@@ -31,6 +33,7 @@ export default {
     EducationComp,
     WorkComp,
     SkillsComp,
+    ProjectPage,
   }
   // name: 'HomeView',
   // components: {
