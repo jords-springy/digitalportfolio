@@ -16,7 +16,7 @@
                 <a
                   href="https://lifechoices.co.za/life-choices-academy/"
                   target="_blank"
-                  class="btn btn-light mt-3"
+                  class="btn btn-light mt-3" style="color: #6D5B67"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -99,10 +99,11 @@
   .btn-light {
     background-color: #a6a6a6;
     border: none;
+    color: #6D5B67
   }
   
   .btn-light:hover {
-    background-color: #6d5b67;
+    background-color: lightslategray;
   }
   
   .row {

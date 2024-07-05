@@ -16,11 +16,11 @@
           <div class="col-md-8 hover-card">
             <div class="card shadow-lg" data-aos="fade-up">
               <div class="card-body">
-                <h1 class="card-title">Hello, I'm Jordan Springveldt</h1>
-                <h4 class="card-text">
+                <h1 class="card-title" style="color: #6D5B67">Hello, I'm Jordan Springveldt</h1>
+                <h4 class="card-text"  style="color: #6D5B67">
                   A Life Choices Student + Aspiring Web Developer
                 </h4>
-                <a href="#contact" class="btn btn-light mt-3" data-aos="fade-up"
+                <a href="#contact" class="btn btn-light mt-3" data-aos="fade-up" style="color:#6d5b67"
                   >Get in Touch</a
                 >
               </div>
@@ -59,7 +59,18 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
-  
+  .card {
+  background-color: #f2d7f5;
+  border: none;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  background-color: #f8f9fa; /* Add this line */
+}
+
+.card-body {
+  padding: 20px;
+  /* Add this line */
+  color:#6d5b67
+}
   .hover-card {
     transition: transform 0.3s, box-shadow 0.3s;
   }
@@ -71,21 +82,25 @@
   .card-title {
     font-size: 2.5rem;
     font-weight: 700;
+    color:#6d5b67
   }
   
   .card-text {
     font-size: 1.25rem;
     font-weight: 400;
+    color:#6d5b67
   }
   
-  .btn-light {
-    background-color: #f2d7f5;
-    border: none;
-  }
-  
-  .btn-light:hover {
-    background-color: #6d5b67;
-  }
+.btn-light {
+  background-color: #f2d7f5;
+  border: none;
+  /* Add this line to define the text color */
+}
+
+.btn-light:hover {
+  background-color: #6d5b67;
+  color: #fff; /* You might want to keep the text color the same on hover */
+}
   
   .hover-zoom:hover {
     transform: scale(1.05);

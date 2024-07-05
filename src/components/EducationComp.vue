@@ -74,6 +74,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 30px;
+    color: #6D5B67
   }
   
   .education-section__content {
@@ -81,6 +82,7 @@
     line-height: 1.7;
     width: 100%;
     margin: 0 auto;
+    color: #6D5B67
   }
 
   /* For screens larger than 1200px */

@@ -62,16 +62,14 @@
     .work-section__content {
       font-size: 1.2rem;
     }
-    
     button {
-      background-color: #a6a6a6;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    
+  background-color: #a6a6a6;
+  color: #fff;
+  padding: 10px 20px;
+  border: solid 1px transparent; /* add this line */
+  border-radius: 10px;
+  cursor: pointer;
+}
     button:hover {
       background-color: #6d5b67;
     }
