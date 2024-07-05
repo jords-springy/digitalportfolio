@@ -1,20 +1,34 @@
 <template>
     <nav class="navbar navbar-light bg-light py-3 fixed-top mb-0">
       <div class="container-fluid">
-        <a href="#home">
+        <router-link to="/" class="navbar-brand">
           <img src="https://jords-springy.github.io/hostedimages/images/mainlogo.jpg" alt="main logo" style="opacity: 0.8; height: 50px; border-color: black;">
-        </a>
+        </router-link>
   
         <h1 style="font-size: 1.2rem; margin: 0 20%;">Jordan Springveldt's Digital Portfolio</h1>
-  
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" @click="toggleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
   
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" :class="{ 'show': isNavbarOpen }" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item" v-for="(link, index) in links" :key="index">
-              <a class="nav-link" :href="`#${link.to}`">{{ link.text }}</a>
+            <li class="nav-item">
+              <router-link to="/" class="nav-link" @click="closeNavbar">HOME</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/about" class="nav-link" @click="closeNavbar">ABOUT</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/education" class="nav-link" @click="closeNavbar">RESUME</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/projects" class="nav-link" @click="closeNavbar">PROJECTS</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/testimonial" class="nav-link" @click="closeNavbar">TESTIMONIAL</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/contact" class="nav-link" @click="closeNavbar">CONTACT</router-link>
             </li>
           </ul>
         </div>
@@ -26,19 +40,21 @@
   export default {
     data() {
       return {
-        links: [
-          { text: 'HOME', to: '/' },
-          { text: 'ABOUT', to: '/about' },
-          { text: 'RESUME', to: '/resume' },
-          { text: 'PROJECTS', to: '/projects' },
-          { text: 'TESTIMONIAL', to: '/testimonial' },
-          { text: 'CONTACT', to: '/contact' },
-        ],
+        isNavbarOpen: false,
       };
+    },
+    methods: {
+      toggleNavbar() {
+        this.isNavbarOpen = !this.isNavbarOpen;
+      },
+      closeNavbar() {
+        this.isNavbarOpen = false;
+      },
     },
   };
   </script>
   
-  <style lang="css">
-    /* Your existing styles */
+  <style>
+  /* Your navbar styles */
   </style>
+  

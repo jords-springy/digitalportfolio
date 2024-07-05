@@ -1,9 +1,28 @@
 <template>
-  <nav>
-    <!-- <router-link to="/">Home</router-link>  -->
-  </nav>
-  <router-view/>
+  <div id="app">
+    <nav-bar />
+    
+    <main>
+      <router-view />
+    </main>
+
+    <footer-comp />
+  </div>
 </template>
+
+<script>
+import NavBar from './components/NavBar.vue';
+
+import FooterComp from './components/FooterComp.vue';
+
+export default {
+  components: {
+    NavBar,
+  
+    FooterComp,
+  },
+};
+</script>
 
 <style>
 #app {
@@ -13,17 +32,8 @@
   text-align: center;
   color: #6D5B67;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+main {
+  padding-top: 70px; /* Adjust based on your navbar height */
+  min-height: calc(100vh - 130px); /* Adjust based on your footer height and navbar height */
 }
 </style>

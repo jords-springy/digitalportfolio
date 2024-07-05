@@ -2,7 +2,8 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-     <NavBar/>
+     <spinner-comp/>
+     
      <landing-page/>
      <about-page/>
      <education-comp/>
@@ -11,12 +12,13 @@
      <project-page/>
      <testimonial-page/>
      <contact-page/>
-     <footer-comp/>
+     
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue';
+import SpinnerComp from '@/components/SpinnerComp.vue';
+
 import LandingPage from '@/components/LandingPage.vue';
 import AboutPage from '@/components/AboutPage.vue';
 import EducationComp from '@/components/EducationComp.vue';
@@ -25,7 +27,8 @@ import SkillsComp from '@/components/SkillsComp.vue';
 import ProjectPage from '@/components/ProjectPage.vue';
 import TestimonialPage from '@/components/TestimonialPage.vue';
 import ContactPage from '@/components/ContactPage.vue';
-import FooterComp from '@/components/FooterComp.vue';
+
+
 
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
@@ -33,7 +36,7 @@ import FooterComp from '@/components/FooterComp.vue';
 export default {
   name: 'HomeView',
   components: {
-    NavBar,
+    
     LandingPage,
     AboutPage,
     EducationComp,
@@ -42,7 +45,8 @@ export default {
     ProjectPage,
     TestimonialPage,
     ContactPage,
-    FooterComp
+    
+    SpinnerComp
   }
   // name: 'HomeView',
   // components: {
