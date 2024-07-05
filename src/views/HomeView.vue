@@ -11,6 +11,7 @@
      <project-page/>
      <testimonial-page/>
      <contact-page/>
+     <footer-comp/>
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import SkillsComp from '@/components/SkillsComp.vue';
 import ProjectPage from '@/components/ProjectPage.vue';
 import TestimonialPage from '@/components/TestimonialPage.vue';
 import ContactPage from '@/components/ContactPage.vue';
+import FooterComp from '@/components/FooterComp.vue';
 
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
@@ -39,7 +41,8 @@ export default {
     SkillsComp,
     ProjectPage,
     TestimonialPage,
-    ContactPage
+    ContactPage,
+    FooterComp
   }
   // name: 'HomeView',
   // components: {
