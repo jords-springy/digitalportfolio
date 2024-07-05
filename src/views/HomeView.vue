@@ -10,6 +10,7 @@
      <skills-comp/>
      <project-page/>
      <testimonial-page/>
+     <contact-page/>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import WorkComp from '@/components/WorkComp.vue';
 import SkillsComp from '@/components/SkillsComp.vue';
 import ProjectPage from '@/components/ProjectPage.vue';
 import TestimonialPage from '@/components/TestimonialPage.vue';
+import ContactPage from '@/components/ContactPage.vue';
 
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
@@ -36,7 +38,8 @@ export default {
     WorkComp,
     SkillsComp,
     ProjectPage,
-    TestimonialPage
+    TestimonialPage,
+    ContactPage
   }
   // name: 'HomeView',
   // components: {
