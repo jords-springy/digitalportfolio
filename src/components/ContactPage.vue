@@ -30,7 +30,7 @@
               <div class="formcarry-block">
                 <button :disabled="isFormInvalid()" type="submit" class="submit-button">Send</button>
               </div>
-      
+  
               <div v-if="showNotification()" class="formcarry-block">
                 <div :class="`formcarry-message-block fc-${icon()}`">
                   <div class="fc-message-icon"></div>
@@ -40,26 +40,34 @@
               </div>
             </form>
             <div class="profile-card">
-                <h5>Find Me</h5>
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-</svg> Western Cape, Cape Town</p>
-        <img src="https://jords-springy.github.io/hostedimages/images/jordan_ceo.jpg" alt="Jordan Springveldt" class="profile-image" />
-        <div class="profile-links">
-          <a href="https://github.com/jords-springy" target="_blank">
-            <img src="https://jords-springy.github.io/hostedimages/images/github.png" alt="GitHub Profile" class="github-icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/jordan-springveldt-27b0342b0/" target="_blank">
-            <img src="https://jords-springy.github.io/hostedimages/images/linkedin.png" alt="LinkedIn Profile" class="linkedin-icon" />
-          </a>
-        </div>
-      </div>
-    </div>
+              <h5>Find Me</h5>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg> Western Cape, Cape Town</p>
+              <img src="https://jords-springy.github.io/hostedimages/images/jordan_ceo.jpg" alt="Jordan Springveldt" class="profile-image" />
+              <div class="profile-links">
+                <a href="https://github.com/jords-springy" target="_blank">
+                  <img src="https://jords-springy.github.io/hostedimages/images/github.png" alt="GitHub Profile" class="github-icon" />
+                </a>
+                <a href="https://www.linkedin.com/in/jordan-springveldt-27b0342b0/" target="_blank">
+                  <img src="https://jords-springy.github.io/hostedimages/images/linkedin.png" alt="LinkedIn Profile" class="linkedin-icon" />
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=jordanspringveldt@gmail.com&su=Subject%20of%20the%20email&body=Hi%20Jordan,%0D%0A%0D%0A"
+                  target="_blank">
+                  <img src="https://jords-springy.github.io/hostedimages/images/email.png" alt="Email" class="email-icon" />
+                </a>
+                <div class="phone-icon-container">
+                  <a href="#" @click.prevent="showPhoneNumber = !showPhoneNumber">
+                    <img src="https://jords-springy.github.io/hostedimages/images/square-phone-flip-solid.png" alt="Phone icon" class="phone-icon">
+                  </a>
+                  <p v-if="showPhoneNumber" class="phone-number">0718763295</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-    
+    </div>
   </template>
   
   <script>
@@ -72,6 +80,7 @@
       const message = ref('');
       const error = ref('');
       const submitted = ref(false);
+      const showPhoneNumber = ref(false);
   
       const resetStates = () => {
         submitted.value = false;
@@ -132,11 +141,14 @@
         icon,
         errorMessage,
         resetStates,
-        isFormInvalid
+        isFormInvalid,
+        showPhoneNumber
       };
     }
   };
   </script>
+
+  
   
   <style scoped>
   .section1-mt-0 {
@@ -313,5 +325,31 @@
     height: 40px;
     margin: 0 10px;
   }
+  .email-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+  .phone-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+ 
+.phone-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
   </style>
   
