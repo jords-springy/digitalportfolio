@@ -1,4 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LandingPage from '@/components/LandingPage.vue';
 import AboutPage from '@/components/AboutPage.vue';
@@ -7,18 +10,34 @@ import ProjectPage from '@/components/ProjectPage.vue';
 import TestimonialPage from '@/components/TestimonialPage.vue';
 import ContactPage from '@/components/ContactPage.vue';
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'home',
     component: HomeView
-  }
-  ,{ path: '/landingpage', component: LandingPage },
-  { path: '/about', component: AboutPage },
-  { path: '/education', component: EducationComp },
-  { path: '/projects', component: ProjectPage },
-  { path: '/testimonial', component: TestimonialPage },
-  { path: '/contact', component: ContactPage },
+  }, {
+    path: '/landingpage',
+    component: LandingPage
+  },
+  {
+    path: '/about',
+    component: AboutPage
+  },
+  {
+    path: '/education',
+    component: EducationComp
+  },
+  {
+    path: '/projects',
+    component: ProjectPage
+  },
+  {
+    path: '/testimonial',
+    component: TestimonialPage
+  },
+  {
+    path: '/contact',
+    component: ContactPage
+  },
 ]
 
 const router = createRouter({
@@ -28,7 +47,9 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition;
     } else {
-      return { top: 0 };
+      return {
+        top: 0
+      };
     }
   },
 });

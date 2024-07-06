@@ -1,4 +1,6 @@
-import { createStore } from 'vuex'
+import {
+  createStore
+} from 'vuex'
 
 export default createStore({
   state: {
@@ -34,7 +36,9 @@ export default createStore({
     }
   },
   actions: {
-    async fetchData({ commit }) {
+    async fetchData({
+      commit
+    }) {
       commit('SET_LOADING', true);
       try {
         const response = await fetch('https://jords-springy.github.io/first_api/data/index.json');

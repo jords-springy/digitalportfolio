@@ -1,35 +1,49 @@
 <template>
-    <div id="projects-section">
+  <div id="projects-section">
     <div
       class="section1-mt-0"
       :style="{
         minHeight: '750px',
-        backgroundImage: 'url(https://jords-springy.github.io/hostedimages/images/section1.png)',
+        backgroundImage:
+          'url(https://jords-springy.github.io/hostedimages/images/section1.png)',
         paddingTop: '60px',
         maxWidth: '100%',
         margin: '0 auto',
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
       }"
     >
-    <div class="projects-section" data-aos="flip-up" data-aos-duration="3000">
-      <h2 class="section-title" data-aos="flip-up" data-aos-duration="3000">My Projects</h2>
-      <div class="row">
-        <div class="col-md-4" v-for="project in projectsData" :key="project.name">
-          <div class="project-card">
-            <img :src="project.image" :alt="project.name" class="card-img-top img-fluid" style="width: 500px; height: 150px;">
-            <div class="card-body">
-              <h5>{{ project.name }}</h5>
-              <p>{{ project.description }}</p>
-              <div class="links">
-                <a :href="project.github" target="_blank">GitHub</a>
-                <a :href="'https://' + project.vercel" target="_blank">Live Demo</a>
+      <div class="projects-section" data-aos="flip-up" data-aos-duration="3000">
+        <h2 class="section-title" data-aos="flip-up" data-aos-duration="3000">
+          My Projects
+        </h2>
+        <div class="row">
+          <div
+            class="col-md-4"
+            v-for="project in projectsData"
+            :key="project.name"
+          >
+            <div class="project-card">
+              <img
+                :src="project.image"
+                :alt="project.name"
+                class="card-img-top img-fluid"
+                style="width: 500px; height: 150px"
+              />
+              <div class="card-body">
+                <h5>{{ project.name }}</h5>
+                <p>{{ project.description }}</p>
+                <div class="links">
+                  <a :href="project.github" target="_blank">GitHub</a>
+                  <a :href="'https://' + project.vercel" target="_blank"
+                    >Live Demo</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -41,12 +55,15 @@ export default {
     };
   },
   mounted() {
-    fetch("https://jords-springy.github.io/first_api/data/index.json?_=" + new Date().getTime())
-      .then(response => response.json())
-      .then(data => {
+    fetch(
+      "https://jords-springy.github.io/first_api/data/index.json?_=" +
+        new Date().getTime()
+    )
+      .then((response) => response.json())
+      .then((data) => {
         this.projectsData = data.projects;
       })
-      .catch(error => console.error(error));
+      .catch((error) => console.error(error));
   },
 };
 </script>
