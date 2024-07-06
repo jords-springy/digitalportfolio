@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-12 text-center">
           <p>
-            &copy; Jordan Springveldt {{ currentYear }}. All rights reserved.
+            &copy; Copyright - Jordan Springveldt {{ currentYear }}. All rights reserved.
           </p>
         </div>
       </div>
