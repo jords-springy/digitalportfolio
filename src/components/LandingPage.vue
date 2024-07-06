@@ -21,13 +21,14 @@
               <h4 class="card-text" style="color: #6d5b67">
                 A Life Choices Student + Aspiring Web Developer
               </h4>
-              <a
-                href="#contact-section"
+              <button
                 class="btn btn-light mt-3"
                 data-aos="fade-up"
                 style="color: #6d5b67"
-                >Get in Touch</a
+                @click="scrollToSection('contact-section')"
               >
+                Get in Touch
+              </button>
             </div>
           </div>
         </div>
@@ -52,6 +53,14 @@ import "aos/dist/aos.css";
 export default {
   mounted() {
     AOS.init();
+  },
+  methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    },
   },
 };
 </script>
