@@ -1,16 +1,13 @@
 <template>
-    <div class="spinner" v-if="loading">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
+    <div v-if="isLoading" class="spinner"></div>
   </template>
   
   <script>
   export default {
     props: {
-      loading: {
+      isLoading: {
         type: Boolean,
-        default: false
+        required: true
       }
     }
   }
@@ -18,31 +15,22 @@
   
   <style scoped>
   .spinner {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    margin: 100px auto;
-  }
-  
-  .double-bounce1, .double-bounce2 {
-    width: 100%;
-    height: 100%;
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light grey border */
+    border-top: 8px solid #6D5B67; /* Blue top border */
     border-radius: 50%;
-    background-color: #333;
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: sk-bounce 2.0s infinite ease-in-out;
+    width: 60px;
+    height: 60px;
+    animation: spin 0.8s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure it's above other content */
   }
   
-  .double-bounce2 {
-    animation-delay: -1.0s;
-  }
-  
-  @keyframes sk-bounce {
-    0%, 100% { transform: scale(0.0) }
-    50% { transform: scale(1.0) }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
   </style>
   

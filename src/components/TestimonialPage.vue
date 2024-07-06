@@ -1,5 +1,5 @@
 <template>
-    <div class="testimonial-section" data-aos="fade-down" data-aos-duration="3000">
+    <div id="testimonial-section" class="testimonial-section" data-aos="fade-down" data-aos-duration="3000">
         <div class="testimonial-title">Testimonials</div>
     <div id="testimonialCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
       <div class="carousel-inner">

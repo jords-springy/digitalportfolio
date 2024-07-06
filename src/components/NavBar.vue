@@ -13,22 +13,22 @@
         <div class="collapse navbar-collapse" :class="{ 'show': isNavbarOpen }" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/" class="nav-link" @click="closeNavbar">HOME</router-link>
+              <router-link to="/" class="nav-link" @click="scrollToSection('home')">HOME</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link" @click="closeNavbar">ABOUT</router-link>
+              <router-link to="/" class="nav-link" @click="scrollToSection('about-section')">ABOUT</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/education" class="nav-link" @click="closeNavbar">RESUME</router-link>
+              <router-link to="/" class="nav-link" @click="scrollToSection('education-section')">RESUME</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/projects" class="nav-link" @click="closeNavbar">PROJECTS</router-link>
+              <router-link to="/" class="nav-link" @click="scrollToSection('projects-section')">PROJECTS</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/testimonial" class="nav-link" @click="closeNavbar">TESTIMONIAL</router-link>
+              <router-link to="/" class="nav-link" @click="scrollToSection('testimonial-section')">TESTIMONIAL</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/contact" class="nav-link" @click="closeNavbar">CONTACT</router-link>
+              <router-link to="/" class="nav-link" @click="scrollToSection('contact-section')">CONTACT</router-link>
             </li>
           </ul>
         </div>
@@ -50,11 +50,96 @@
       closeNavbar() {
         this.isNavbarOpen = false;
       },
-    },
+      scrollToSection(sectionId) {
+        this.closeNavbar();
+        this.$nextTick(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            // Calculate offset for fixed navbar
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const offsetTop = element.offsetTop - navbarHeight;
+            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+          }
+        });
+      }
+    }
   };
   </script>
   
-  <style>
-  /* Your navbar styles */
-  </style>
-  
+  <style scoped>
+  /* Make the navbar button always visible */
+  .navbar-toggler {
+    display: block !important;
+  }
+
+  /* Style the navbar */
+  .navbar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Style the navbar brand */
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+
+  /* Style the navbar links */
+  .nav-link {
+    color: #337ab7;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #23527c;
+  }
+
+  /* Style the navbar collapse */
+  .collapse.navbar-collapse {
+    padding: 10px;
+  }
+
+  /* Style the navbar toggler icon */
+  .navbar-toggler-icon {
+    font-size: 1.5rem;
+  }
+
+  /* Media queries */
+  @media (max-width: 1200px) {
+    .navbar {
+      padding: 5px;
+    }
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+    .nav-link {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 786px) {
+    .navbar {
+      padding: 3px;
+    }
+    .navbar-brand {
+      font-size: 1rem;
+    }
+    .nav-link {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 300px) {
+    .navbar {
+      padding: 2px;
+    }
+    .navbar-brand {
+      font-size: 0.8rem;
+    }
+    .nav-link {
+      font-size: 0.8rem;
+    }
+  }
+</style>

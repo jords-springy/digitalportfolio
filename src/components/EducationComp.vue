@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="education-section">
       <div
         class="section1-mt-0"
         :style="{

@@ -1,4 +1,5 @@
 <template>
+    <div id="projects-section">
     <div
       class="section1-mt-0"
       :style="{
@@ -28,6 +29,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 

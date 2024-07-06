@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="about-section">
       <div class="about-section mt-5">
         <div class="container">
           <div class="row">
