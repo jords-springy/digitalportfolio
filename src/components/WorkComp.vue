@@ -80,5 +80,52 @@ button {
 button:hover {
   background-color: #6d5b67;
 }
+/* Media query for 1200px */
+@media (max-width: 1200px) {
+ .work-section {
+    padding: 40px 0;
+  }
+ .work-section__title {
+    font-size: 2rem;
+  }
+ .work-section__content {
+    font-size: 1rem;
+  }
+  button {
+    padding: 8px 16px;
+  }
+}
+
+/* Media query for 768px */
+@media (max-width: 768px) {
+ .work-section {
+    padding: 20px 0;
+  }
+ .work-section__title {
+    font-size: 1.8rem;
+  }
+ .work-section__content {
+    font-size: 0.9rem;
+  }
+  button {
+    padding: 6px 12px;
+  }
+}
+
+/* Media query for 300px */
+@media (max-width: 300px) {
+ .work-section {
+    padding: 10px 0;
+  }
+ .work-section__title {
+    font-size: 1.5rem;
+  }
+ .work-section__content {
+    font-size: 0.7rem;
+  }
+  button {
+    padding: 4px 8px;
+  }
+}
 </style>
   

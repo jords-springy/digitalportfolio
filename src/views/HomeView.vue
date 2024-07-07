@@ -38,3 +38,38 @@ export default {
   },
 };
 </script>
+
+<style>
+/* Media query for 1200px */
+@media (max-width: 1200px) {
+ .home {
+    flex-direction: column;
+  }
+ .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.testimonial-page,.contact-page {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
+
+/* Media query for 768px */
+@media (max-width: 768px) {
+ .home {
+    flex-direction: column;
+  }
+ .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.testimonial-page,.contact-page {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* Media query for 300px */
+@media (max-width: 300px) {
+ .home {
+    flex-direction: column;
+  }
+ .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.testimonial-page,.contact-page {
+    width: 95%;
+    margin: 5px auto;
+  }
+}
+</style>

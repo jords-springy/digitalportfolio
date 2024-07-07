@@ -30,8 +30,6 @@ export default {
   mounted() {
     this.fetchData();
   },
-  beforeMounted() {
-  },
   methods: {
     async fetchData() {
       try {
@@ -53,12 +51,63 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #6d5b67;
+  display: flex; /* Ensure it's a flex container */
+  flex-direction: column; /* Stack children vertically */
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
 }
 
 main {
-  padding-top: 70px; 
-  min-height: calc(
-    100vh - 130px
-  );
+  width: 100%; /* Ensure full width */
+  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  flex-grow: 1; /* Grow to fill remaining space */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  box-sizing: border-box; /* Ensure padding and border are included in width */; /* Add background for visibility */
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 1440px) {
+  main {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  main {
+    padding-top: 25px;
+  }
+}
+
+@media (max-width: 375px) {
+  main {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 300px) {
+  main {
+    padding-top: 10px;
+  }
 }
 </style>
