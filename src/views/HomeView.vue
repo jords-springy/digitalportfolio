@@ -52,36 +52,53 @@ export default {
 </script>
 
 <style>
-/* Media query for 1200px */
+/* Prevent horizontal scroll for the entire app */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent any horizontal scroll */
+  width: 100%;
+}
+
+/* Ensure the home container and child components are responsive */
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Ensure each section takes full width without overflow */
+.landing-page, .about-page, .education-comp, .work-comp, .skills-comp, .project-page, .contact-page {
+  width: 100%;
+  max-width: 1200px; /* Prevent sections from being too wide */
+  margin: 20px auto;
+  padding: 0 10px; /* Add padding to prevent content from touching screen edges */
+}
+
+/* Media query for 1200px and below */
 @media (max-width: 1200px) {
- .home {
-    flex-direction: column;
-  }
- .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.contact-page {
-    width: 80%;
+  .landing-page, .about-page, .education-comp, .work-comp, .skills-comp, .project-page, .contact-page {
+    width: 90%;
     margin: 20px auto;
   }
 }
 
-/* Media query for 768px */
+/* Media query for 768px and below */
 @media (max-width: 768px) {
- .home {
-    flex-direction: column;
-  }
- .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.contact-page {
-    width: 90%;
+  .landing-page, .about-page, .education-comp, .work-comp, .skills-comp, .project-page, .contact-page {
+    width: 95%;
     margin: 10px auto;
   }
 }
 
-/* Media query for 300px */
+/* Media query for very small devices (300px) */
 @media (max-width: 300px) {
- .home {
-    flex-direction: column;
-  }
- .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.contact-page {
-    width: 95%;
+  .landing-page, .about-page, .education-comp, .work-comp, .skills-comp, .project-page, .contact-page {
+    width: 98%;
     margin: 5px auto;
   }
 }
+
 </style>

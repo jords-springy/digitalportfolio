@@ -79,7 +79,7 @@ export default {
 };
 </script>
     
-    <style>
+<style>
 .about-section {
   background-color: #f8f9fa;
   padding: 60px 0;
@@ -97,26 +97,28 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
+
 .btn-light {
   background-color: #a6a6a6;
   border: none;
   color: #6d5b67;
 }
 
-
-
 .row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
+/* Updated responsive image styles */
 .about-section img {
-  height: 350px;
-  width: 350px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  margin-left: 300px;
+  margin: 0 auto; /* Center the image */
+  display: block; /* Ensure block display for margin auto centering */
 }
 
 /* For screens larger than 1200px */
@@ -129,11 +131,6 @@ export default {
   }
   .section-description {
     font-size: 1.3rem;
-  }
-  .about-section img {
-    height: 400px;
-    width: 400px;
-    margin-left: 350px;
   }
 }
 
@@ -148,11 +145,6 @@ export default {
   .section-description {
     font-size: 1.2rem;
   }
-  .about-section img {
-    height: 350px;
-    width: 350px;
-    margin-left: 250px;
-  }
 }
 
 /* For screens smaller than 768px */
@@ -166,11 +158,6 @@ export default {
   .section-description {
     font-size: 1.1rem;
   }
-  .about-section img {
-    height: 250px;
-    width: 250px;
-    margin-left: 150px;
-  }
 }
 
 /* For screens smaller than 300px */
@@ -183,11 +170,6 @@ export default {
   }
   .section-description {
     font-size: 1rem;
-  }
-  .about-section img {
-    height: 150px;
-    width: 150px;
-    margin-left: 50px;
   }
   .row {
     flex-direction: column;
