@@ -77,9 +77,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
-button:hover {
-  background-color: #6d5b67;
-}
+
 /* Media query for 1200px */
 @media (max-width: 1200px) {
  .work-section {

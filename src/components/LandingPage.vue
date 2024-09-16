@@ -137,10 +137,7 @@ export default {
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .btn-light:hover {
-      background-color: #6d5b67;
-      color: #fff;
-    }
+   
 
     .hover-zoom:hover {
       transform: scale(1.05);
