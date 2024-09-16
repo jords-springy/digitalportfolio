@@ -103,9 +103,7 @@ export default {
   color: #6d5b67;
 }
 
-.btn-light:hover {
-  background-color: lightslategray;
-}
+
 
 .row {
   display: flex;
