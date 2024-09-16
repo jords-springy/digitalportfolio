@@ -7,7 +7,7 @@ import LandingPage from '@/components/LandingPage.vue';
 import AboutPage from '@/components/AboutPage.vue';
 import EducationComp from '@/components/EducationComp.vue';
 import ProjectPage from '@/components/ProjectPage.vue';
-import TestimonialPage from '@/components/TestimonialPage.vue';
+// import TestimonialPage from '@/components/TestimonialPage.vue';
 import ContactPage from '@/components/ContactPage.vue';
 
 const routes = [{
@@ -30,10 +30,10 @@ const routes = [{
     path: '/projects',
     component: ProjectPage
   },
-  {
-    path: '/testimonial',
-    component: TestimonialPage
-  },
+  // {
+  //   path: '/testimonial',
+  //   component: TestimonialPage
+  // },
   {
     path: '/contact',
     component: ContactPage

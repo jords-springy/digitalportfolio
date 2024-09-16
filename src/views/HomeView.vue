@@ -20,7 +20,7 @@ import EducationComp from "@/components/EducationComp.vue";
 import WorkComp from "@/components/WorkComp.vue";
 import SkillsComp from "@/components/SkillsComp.vue";
 import ProjectPage from "@/components/ProjectPage.vue";
-import TestimonialPage from "@/components/TestimonialPage.vue";
+// import TestimonialPage from "@/components/TestimonialPage.vue";
 import ContactPage from "@/components/ContactPage.vue";
 
 export default {
@@ -32,7 +32,7 @@ export default {
     WorkComp,
     SkillsComp,
     ProjectPage,
-    TestimonialPage,
+    // TestimonialPage,
     ContactPage,
     SpinnerComp,
   },

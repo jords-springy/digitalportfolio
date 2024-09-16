@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div
     id="testimonial-section"
     class="testimonial-section"
@@ -165,4 +165,4 @@ export default {
     font-size: 2rem;
   }
 }
-</style>
+</style> -->
