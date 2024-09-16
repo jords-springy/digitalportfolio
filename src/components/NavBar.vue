@@ -162,9 +162,29 @@ export default {
   .nav-link {
     font-size: 1rem;
   }
+  h1 {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 576px) {
+  .navbar {
+    padding: 3px;
+  }
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 0.9rem;
+    margin: 0 5%;
+  }
+}
+
+@media (max-width: 400px) {
   .navbar {
     padding: 2px;
   }
@@ -173,6 +193,26 @@ export default {
   }
   .nav-link {
     font-size: 0.8rem;
+  }
+  h1 {
+    font-size: 0.8rem;
+    margin: 0 2%;
+  }
+}
+
+@media (max-width: 300px) {
+  .navbar {
+    padding: 2px;
+  }
+  .navbar-brand {
+    font-size: 0.7rem;
+  }
+  .nav-link {
+    font-size: 0.7rem;
+  }
+  h1 {
+    font-size: 0.7rem;
+    margin: 0 1%;
   }
 }
 </style>
