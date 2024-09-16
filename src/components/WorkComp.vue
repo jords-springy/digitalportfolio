@@ -36,7 +36,7 @@ export default {
   methods: {
     downloadCV() {
       const url =
-        "https://jords-springy.github.io/hostedimages/images/CV-Jordan-Springveldt.pdf";
+        "https://jords-springy.github.io/hostedimages/images/CV%20-%20Jordan%20Springveldt.pdf";
       const filename = "CV-Jordan-Springveldt.pdf";
       fetch(url)
         .then((response) => response.blob())
