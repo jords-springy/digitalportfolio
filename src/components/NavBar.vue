@@ -215,4 +215,5 @@ export default {
     margin: 0 1%;
   }
 }
+
 </style>

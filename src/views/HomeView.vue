@@ -1,16 +1,17 @@
 <template>
   <div class="home">
-    <spinner-comp />
+    <spinner-comp :isLoading="isLoading" />
     <landing-page />
     <about-page />
     <education-comp />
     <work-comp />
     <skills-comp />
     <project-page />
-    <testimonial-page />
+    <!-- <testimonial-page /> -->
     <contact-page />
   </div>
 </template>
+
 
 <script>
 import SpinnerComp from "@/components/SpinnerComp.vue";
@@ -36,6 +37,17 @@ export default {
     ContactPage,
     SpinnerComp,
   },
+  data() {
+    return {
+      isLoading: true, // Set to true initially or control it based on your logic
+    };
+  },
+  mounted() {
+    // Simulate data loading, set `isLoading` to false once done
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 100); // Example: 2-second loading delay
+  },
 };
 </script>
 
@@ -45,7 +57,7 @@ export default {
  .home {
     flex-direction: column;
   }
- .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.testimonial-page,.contact-page {
+ .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.contact-page {
     width: 80%;
     margin: 20px auto;
   }
@@ -56,7 +68,7 @@ export default {
  .home {
     flex-direction: column;
   }
- .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.testimonial-page,.contact-page {
+ .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.contact-page {
     width: 90%;
     margin: 10px auto;
   }
@@ -67,7 +79,7 @@ export default {
  .home {
     flex-direction: column;
   }
- .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.testimonial-page,.contact-page {
+ .landing-page,.about-page,.education-comp,.work-comp,.skills-comp,.project-page,.contact-page {
     width: 95%;
     margin: 5px auto;
   }
