@@ -54,14 +54,14 @@
               >PROJECTS</router-link
             >
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               to="/"
               class="nav-link"
               @click="scrollToSection('testimonial-section')"
               >TESTIMONIAL</router-link
             >
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link
               to="/"
