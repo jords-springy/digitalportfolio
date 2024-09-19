@@ -3,9 +3,9 @@
     <spinner-comp :isLoading="isLoading" />
     <landing-page />
     <about-page />
+    <skills-comp />
     <education-comp />
     <work-comp />
-    <skills-comp />
     <project-page />
     <!-- <testimonial-page /> -->
     <contact-page />
@@ -17,9 +17,9 @@
 import SpinnerComp from "@/components/SpinnerComp.vue";
 import LandingPage from "@/components/LandingPage.vue";
 import AboutPage from "@/components/AboutPage.vue";
+import SkillsComp from "@/components/SkillsComp.vue";
 import EducationComp from "@/components/EducationComp.vue";
 import WorkComp from "@/components/WorkComp.vue";
-import SkillsComp from "@/components/SkillsComp.vue";
 import ProjectPage from "@/components/ProjectPage.vue";
 // import TestimonialPage from "@/components/TestimonialPage.vue";
 import ContactPage from "@/components/ContactPage.vue";
@@ -29,9 +29,9 @@ export default {
   components: {
     LandingPage,
     AboutPage,
+    SkillsComp,
     EducationComp,
     WorkComp,
-    SkillsComp,
     ProjectPage,
     // TestimonialPage,
     ContactPage,

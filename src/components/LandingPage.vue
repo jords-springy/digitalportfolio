@@ -1,23 +1,21 @@
 <template>
   <div id="home">
     <div
-      class="section1-mt-0"
-      :style="{
-        
-        backgroundImage:
-          'url(https://jords-springy.github.io/hostedimages/images/section1.png)',
-        paddingTop: '60px',
-        
-        margin: '0 auto',
-      }"
-    >
+  class="section1-mt-0"
+  :style="{
+    backgroundColor: '#e6e6fa',
+    paddingTop: '60px',
+    margin: '0 auto',
+  }"
+>
+
       <div class="d-flex justify-content-end align-items-center h-100">
         <div class="col-md-8 hover-card" style="margin-top:7rem">
           <div class="card shadow-lg" data-aos="fade-up">
             <div class="card-body">
-              <h1 class="card-title" style="color: #6d5b67">
+              <h2 class="card-title" style="color: #6d5b67">
                 Hello, I'm Jordan Springveldt
-              </h1>
+              </h2>
               <h4 class="card-text" style="color: #6d5b67">
                 A Life Choices Student + Aspiring Web Developer
               </h4>

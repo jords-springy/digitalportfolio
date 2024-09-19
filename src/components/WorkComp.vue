@@ -67,7 +67,7 @@ export default {
 }
 
 .work-section__content {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 button {
   background-color: #a6a6a6;

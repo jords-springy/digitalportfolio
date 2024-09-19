@@ -4,8 +4,8 @@
       class="section1-mt-0"
       :style="{
         minHeight: '750px',
-        backgroundImage:
-          'url(https://jords-springy.github.io/hostedimages/images/section1.png)',
+        backgroundColor:
+          '#e6e6fa',
         paddingTop: '60px',
         maxWidth: '100%',
         margin: '0 auto',
@@ -14,14 +14,14 @@
     >
       <div class="card" data-aos="zoom-out-down" data-aos-duration="1500">
         <div class="education-section">
-          <div class="education-section__title">Education</div>
+          <h2 class="education-section__title">Education</h2>
           <div class="education-section__content">
             <div v-for="(education, index) in educationData" :key="index">
-              <h1>
+              <h3>
                 {{
                   education.placeOfInstitution1 || education.placeOfInstitution2
                 }}
-              </h1>
+              </h3>
               <p v-if="education.description1">
                 {{ education.description1 }}<br />
               </p>
@@ -88,7 +88,7 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.education-section__title {
+.education-section__title{
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 30px;

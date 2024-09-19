@@ -92,7 +92,7 @@ export default {
 }
 
 .section-description {
-  font-size: 1.1rem;
+  font-size: 0.2rem;
   line-height: 1.7;
   width: 100%;
   margin: 0 auto;

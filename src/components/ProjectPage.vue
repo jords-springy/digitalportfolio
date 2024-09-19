@@ -4,8 +4,8 @@
       class="section1-mt-0"
       :style="{
         minHeight: '750px',
-        backgroundImage:
-          'url(https://jords-springy.github.io/hostedimages/images/section1.png)',
+        backgroundColor:
+          '#e6e6fa',
         paddingTop: '60px',
         maxWidth: '100%',
         margin: '0 auto',

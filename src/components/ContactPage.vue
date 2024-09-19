@@ -1,23 +1,11 @@
 <template>
   <div id="contact-section">
-    <div
-      class="section1-mt-0"
-      :style="{
-        minHeight: '750px',
-        backgroundImage:
-          'url(https://jords-springy.github.io/hostedimages/images/section1.png)',
-        paddingTop: '60px',
-        maxWidth: '100%',
-        margin: '0 auto',
-        backgroundSize: 'cover',
-      }"
-    >
       <div
         class="contact-section"
         data-aos="fade-right"
         data-aos-duration="3000"
       >
-        <div class="contact-title">Contact Me</div>
+        <h2 class="contact-title">Contact Me</h2>
         <div class="formcarry-container">
           <form @submit.prevent="validateAndSubmit">
             <div class="formcarry-block">
@@ -84,6 +72,14 @@
               </svg>
               Western Cape, Cape Town
             </p>
+            <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg>
+jordanspringveldt@gmail.com</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+</svg> 0718763295</p>
             <img
               src="https://jords-springy.github.io/hostedimages/images/jordan_ceo.jpg"
               alt="Jordan Springveldt"
@@ -132,7 +128,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
   
   <script>
@@ -222,16 +217,12 @@ export default {
   
   
   <style scoped>
-.section1-mt-0 {
-  min-height: 750px;
-  background-image: url(https://jords-springy.github.io/hostedimages/images/section1.png);
-  padding-top: 60px;
-  max-width: 100%;
-  margin: 0 auto;
-  background-size: cover;
+.contact-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
 }
 
-.contact-title {
+h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -250,9 +241,7 @@ export default {
   margin-bottom: 15px;
 }
 
-label {
-  font-weight: bold;
-}
+
 
 input,
 textarea {
