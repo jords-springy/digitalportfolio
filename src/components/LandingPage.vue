@@ -141,11 +141,9 @@ html {
   /* Use justify-content: flex-end for right alignment */
 }
 
-.typing-effect {
-  font-family: monospace; /* Optional: to simulate a typing font */
+.typing-effect { /* Optional: to simulate a typing font */
   white-space: nowrap; /* Prevent the text from wrapping */
-  overflow: hidden; /* Hide the text until it "types out" */
-  border-right: 2px solid black; /* The cursor effect */
+  overflow: hidden; /* Hide the text until it "types out" *//* The cursor effect */
   display: inline-block; /* Ensure the text occupies only the needed space */
   animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
 }
