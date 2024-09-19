@@ -14,7 +14,11 @@
           <div class="card shadow-lg" data-aos="fade-up">
             <div class="card-body">
               <h2 class="card-title" style="color: #6d5b67">
-                Hello, I'm Jordan Springveldt
+                <div class="typing-container">
+                <div class="typing-effect">
+                  Hello, I'm Jordan Springveldt
+                </div>
+                </div>
               </h2>
               <h4 class="card-text" style="color: #6d5b67">
                 A Life Choices Student + Aspiring Web Developer
@@ -131,6 +135,40 @@ html {
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;
 }
+.typing-container {
+  display: flex;
+  justify-content: flex-start; /* Align the text to the left */
+  /* Use justify-content: flex-end for right alignment */
+}
+
+.typing-effect {
+  font-family: monospace; /* Optional: to simulate a typing font */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide the text until it "types out" */
+  border-right: 2px solid black; /* The cursor effect */
+  display: inline-block; /* Ensure the text occupies only the needed space */
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Keyframes for the typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* The width grows based on the content */
+  }
+}
+
+/* Keyframes for the blinking cursor */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
 
 .btn-light:hover{
   color:#f8f9fa
