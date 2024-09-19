@@ -8,6 +8,8 @@
         class="work-section__content"
       >
         {{ experience.description }}
+        <br>
+        {{ experience.date }}
       </div>
       <br />
       <button @click="downloadCV" class="btn-light">Download CV</button>
@@ -71,7 +73,7 @@ export default {
 }
 
 .btn-light {
-  background-color: grey;
+  background-color: #f4f0ec;
   border: none;
   padding: 10px 20px;
   color: #6d5b67;
@@ -80,7 +82,7 @@ export default {
 }
 
 .btn-light:hover{
-  color:#f8f9fa
+  color:grey
 }
 
 /* Media query for 1200px */
