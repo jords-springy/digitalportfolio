@@ -135,39 +135,6 @@ html {
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;
 }
-.typing-container {
-  display: flex;
-  justify-content: flex-start; /* Align the text to the left */
-  /* Use justify-content: flex-end for right alignment */
-}
-
-.typing-effect { /* Optional: to simulate a typing font */
-  white-space: nowrap; /* Prevent the text from wrapping */
-  overflow: hidden; /* Hide the text until it "types out" *//* The cursor effect */
-  display: inline-block; /* Ensure the text occupies only the needed space */
-  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-}
-
-/* Keyframes for the typing animation */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%; /* The width grows based on the content */
-  }
-}
-
-/* Keyframes for the blinking cursor */
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-
-
-
 
 
 .hover-zoom:hover {
