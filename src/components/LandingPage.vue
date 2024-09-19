@@ -129,7 +129,7 @@ html {
 }
 
 .btn-light {
-  background-color: #f2d7f5;
+  background-color: #f8f9fa;
   border: none;
   padding: 10px 20px;
   color: #6d5b67;
@@ -168,9 +168,7 @@ html {
 
 
 
-.btn-light:hover{
-  color:#f8f9fa
-}
+
 
 .hover-zoom:hover {
   transform: scale(1.05);
