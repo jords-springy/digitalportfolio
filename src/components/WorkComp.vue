@@ -73,7 +73,7 @@ export default {
 }
 
 .btn-light {
-  background-color: #f4f0ec;
+  background-color: grey;
   border: none;
   padding: 10px 20px;
   color: #6d5b67;
@@ -82,7 +82,7 @@ export default {
 }
 
 .btn-light:hover{
-  color:grey
+  color:#f4f0ec
 }
 
 /* Media query for 1200px */
