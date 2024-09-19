@@ -132,6 +132,10 @@ html {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.btn-light:hover{
+  color:#f8f9fa
+}
+
 .hover-zoom:hover {
   transform: scale(1.05);
   transition: transform 0.3s;

@@ -10,7 +10,7 @@
         {{ experience.description }}
       </div>
       <br />
-      <button @click="downloadCV">Download CV</button>
+      <button @click="downloadCV" class="btn-light">Download CV</button>
     </div>
   </div>
 </template>
@@ -69,13 +69,18 @@ export default {
 .work-section__content {
   font-size: 1.1rem;
 }
-button {
-  background-color: #a6a6a6;
-  color: #fff;
+
+.btn-light {
+  background-color: grey;
+  border: none;
   padding: 10px 20px;
-  border: solid 1px transparent;
-  border-radius: 10px;
-  cursor: pointer;
+  color: #6d5b67;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 1rem;
+}
+
+.btn-light:hover{
+  color:#f8f9fa
 }
 
 /* Media query for 1200px */

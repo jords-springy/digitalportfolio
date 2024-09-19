@@ -84,6 +84,7 @@ export default {
 
 .project-card:hover {
   transform: scale(1.05);
+  background-color: #f8f9fa;
 }
 
 .project-card img {
@@ -106,7 +107,9 @@ export default {
 }
 
 .links a:hover {
-  text-decoration: underline;
+  color:white;
+  background-color:grey;
+  border-radius: 1rem;
 }
 
 /* For screens larger than 1200px */
