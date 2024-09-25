@@ -247,7 +247,6 @@ input,
 textarea {
   width: 100%;
   padding: 8px;
-  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
