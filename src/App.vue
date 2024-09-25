@@ -46,7 +46,16 @@ export default {
 
 <style>
 #app {
-  font-family: Roboto, sans-serif;
+
+
+
+  font-family: "Uchen", serif;
+  font-weight: 400;
+  font-style: normal;
+
+
+
+ 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -58,6 +67,20 @@ export default {
   margin: 0; /* Reset margin */
   padding: 0; /* Reset padding */
 }
+
+
+
+
+
+h1, h2, h3 {
+    font-weight: 700; /* or adjust to your preference for headings */
+}
+
+p {
+    font-weight: 300; /* or 400 for normal weight */
+}
+
+
 
 main {
   width: 100%; /* Ensure full width */
