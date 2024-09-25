@@ -96,10 +96,7 @@ export default {
 }
 
 .education-section__content {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  width: 100%;
-  margin: 0 auto;
+
   color: #6d5b67;
 }
 

@@ -91,12 +91,7 @@ export default {
   margin-bottom: 30px;
 }
 
-.section-description {
-  font-size: 0.2rem;
-  line-height: 1.7;
-  width: 100%;
-  margin: 0 auto;
-}
+
 
 .btn-light {
   background-color: #a6a6a6;
