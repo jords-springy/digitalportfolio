@@ -43,7 +43,7 @@
               to="/"
               class="nav-link"
               @click="scrollToSection('education-section')"
-              >EDUCATION</router-link
+              >EDUCATION & EXPERIENCE</router-link
             >
           </li>
           <li class="nav-item">
