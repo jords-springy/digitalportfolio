@@ -4,8 +4,7 @@
       class="section1-mt-0"
       :style="{
         minHeight: '750px',
-        backgroundColor:
-          '#e6e6fa',
+        backgroundColor: '#e6e6fa',
         paddingTop: '60px',
         maxWidth: '100%',
         margin: '0 auto',
@@ -34,9 +33,7 @@
                 <p>{{ project.description }}</p>
                 <div class="links">
                   <a :href="project.github" target="_blank">GitHub</a>
-                  <a :href="'https://' + project.vercel" target="_blank"
-                    >Live Demo</a
-                  >
+                  <a :href="project.vercel" target="_blank">Live Demo</a>
                 </div>
               </div>
             </div>
@@ -55,10 +52,7 @@ export default {
     };
   },
   mounted() {
-    fetch(
-      "https://jords-springy.github.io/first_api/data/index.json?_=" +
-        new Date().getTime()
-    )
+    fetch("https://jords-springy.github.io/first_api/data/index.json")
       .then((response) => response.json())
       .then((data) => {
         this.projectsData = data.projects;
