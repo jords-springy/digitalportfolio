@@ -41,7 +41,7 @@
               <button
                 :disabled="isFormInvalid()"
                 type="submit"
-                class="submit-button"
+                class="btn btn-light mt-3"
               >
                 Send
               </button>
@@ -251,19 +251,26 @@ textarea {
   border-radius: 4px;
 }
 
-.submit-button {
-  color: white;
+.btn-light {
+  background-color: #a6a6a6;
+  color: #6d5b67;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.submit-button:disabled {
-  background-color: #aaa;
+.btn-light:hover {
+  background-color: #6d5b67; /* Darken background on hover */
+  color: #ffffff; /* Change text color on hover */
+}
+
+.btn-light:disabled {
   cursor: not-allowed;
 }
+
 
 .formcarry-message-block {
   background-color: #f8d7da;
