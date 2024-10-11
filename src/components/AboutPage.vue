@@ -1,6 +1,6 @@
 <template>
   <div id="about-section">
-    <div class="about-section mt-5">
+    <div class="about-section">
       <div class="container">
         <div class="row">
           <div class="col-md-6" data-aos="fade-right">
@@ -81,7 +81,7 @@ export default {
     
 <style>
 .about-section {
-  background-color: #f8f9fa;
+  background-color: #fff;
   padding: 60px 0;
 }
 

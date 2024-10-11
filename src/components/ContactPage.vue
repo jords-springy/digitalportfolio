@@ -218,7 +218,7 @@ export default {
   
   <style scoped>
 .contact-section {
-  background-color: #f8f9fa;
+  background-color: #fff;
   padding: 60px 0;
 }
 

@@ -1,21 +1,30 @@
 <template>
   <div class="skills-section" data-aos="zoom-out-up" data-aos-duration="1500">
     <h2 class="section-title">My Skills</h2>
-    <div class="row">
-      <div class="col-md-4" v-for="skill in skillsData" :key="skill.name">
-        <img
-          :src="skill.github"
-          :alt="skill.name"
-          class="card-img-top img-fluid zoom-effect"
-          style="width: 150px; height: 150px"
-        />
-        <div class="card-body">
-          <h5>{{ skill.name }}</h5>
+    <div v-for="(skills, category) in groupedSkills" :key="category" class="category-section">
+      <h3 class="category-title">{{ category }}</h3>
+      <div class="row justify-content-center" :class="{ 'aws-category': category === 'AWS' }">
+        <div :class="category === 'AWS' ? 'col-md-auto' : 'col-md-4'" v-for="skill in skills" :key="skill.name">
+          <img
+            :src="skill.github"
+            :alt="skill.name"
+            class="card-img-top img-fluid zoom-effect"
+            style="width: 150px; height: 150px"
+            @click="skill.pdf && openPdf(skill.pdf)" 
+          />
+          <div class="card-body">
+            <h5>{{ skill.name }}</h5>
+            <a v-if="skill.pdf" :href="skill.pdf" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
+              View Certificates
+            </a>
+            <br>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -23,6 +32,17 @@ export default {
     return {
       skillsData: [],
     };
+  },
+  computed: {
+    groupedSkills() {
+      return this.skillsData.reduce((groups, skill) => {
+        if (!groups[skill.category]) {
+          groups[skill.category] = [];
+        }
+        groups[skill.category].push(skill);
+        return groups;
+      }, {});
+    },
   },
   mounted() {
     fetch(
@@ -39,8 +59,24 @@ export default {
 </script>
 
 <style>
+.btn-light {
+  background-color: #a6a6a6;
+  border: none;
+  color: #6d5b67;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text */
+  justify-content: center; /* Center vertically */
+  height: 100%; /* Full height */
+}
+
 .skills-section {
-  background-color: #f8f9fa;
+  background-color: #fff;
   padding: 60px 0;
 }
 
@@ -56,15 +92,16 @@ export default {
 
 @keyframes zoom-effect {
   0% {
-    transform: scale(1);
+    transform: scale(0.8);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(0.9);
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.8);
   }
 }
+
 /* For screens larger than 1200px */
 @media (min-width: 1200px) {
   .skills-section {
@@ -103,5 +140,12 @@ export default {
   .skills-section .section-title {
     font-size: 1.5rem;
   }
+}
+
+/* Center the AWS category skills */
+.aws-category {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 </style>

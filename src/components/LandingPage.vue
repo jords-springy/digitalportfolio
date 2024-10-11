@@ -129,9 +129,8 @@ html {
 }
 
 .btn-light {
-  background-color: #f8f9fa;
+  background-color: #a6a6a6;
   border: none;
-  padding: 10px 20px;
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;
 }

@@ -12,7 +12,7 @@
         {{ experience.date }}
       </div>
       <br />
-      <button @click="downloadCV" class="btn-light">Download CV</button>
+      <button @click="downloadCV" class="btn btn-light mt-3" style="color: #6d5b67">Download CV</button>
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@ export default {
   
   <style>
 .work-section {
-  background-color: #f8f9fa;
+  background-color: #fff;
   padding: 60px 0;
 }
 
@@ -73,9 +73,8 @@ export default {
 }
 
 .btn-light {
-  background-color: grey;
+  background-color: #a6a6a6;
   border: none;
-  padding: 10px 20px;
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;
   border-radius: 1rem;
