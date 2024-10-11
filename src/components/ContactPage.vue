@@ -264,7 +264,7 @@ textarea {
 
 .btn-light:hover {
   background-color: #6d5b67; /* Darken background on hover */
-  color: #ffffff; /* Change text color on hover */
+   /* Change text color on hover */
 }
 
 .btn-light:disabled {
