@@ -94,7 +94,6 @@ export default {
 
 
 .btn-light {
-  background-color: #e9ecef;
   border: none;
   color: #6d5b67;
 }
