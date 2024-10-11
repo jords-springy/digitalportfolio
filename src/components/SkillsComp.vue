@@ -60,7 +60,7 @@ export default {
 
 <style>
 .btn-light {
-  background-color: #a6a6a6;
+  background-color: #e9ecef;
   border: none;
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;

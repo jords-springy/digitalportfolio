@@ -252,7 +252,6 @@ textarea {
 }
 
 .submit-button {
-  background-color: #a6a6a6;
   color: white;
   padding: 10px 20px;
   border: none;
