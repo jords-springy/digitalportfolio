@@ -1,23 +1,51 @@
 <template>
-  <div class="skills-section" data-aos="zoom-out-up" data-aos-duration="1500">
-    <h2 class="section-title">My Skills</h2>
-    <div v-for="(skills, category) in groupedSkills" :key="category" class="category-section">
-      <h3 class="category-title">{{ category }}</h3>
-      <div class="row justify-content-center" :class="{ 'aws-category': category === 'AWS' }">
-        <div :class="category === 'AWS' ? 'col-md-auto' : 'col-md-4'" v-for="skill in skills" :key="skill.name">
-          <img
-            :src="skill.github"
-            :alt="skill.name"
-            class="card-img-top img-fluid zoom-effect"
-            style="width: 150px; height: 150px"
-            @click="skill.pdf && openPdf(skill.pdf)" 
-          />
-          <div class="card-body">
-            <h5>{{ skill.name }}</h5>
-            <a v-if="skill.pdf" :href="skill.pdf" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
-              View Certificates
-            </a>
-            <br>
+  <div>
+    <!-- Skills Section -->
+    <div class="skills-section" data-aos="zoom-out-up" data-aos-duration="1500">
+      <h2 class="section-title">My Skills</h2>
+      <div v-for="(skills, category) in groupedSkills" :key="category" class="category-section">
+        <h3 class="category-title">{{ category }}</h3>
+        <div class="row justify-content-center" :class="{ 'aws-category': category === 'AWS' }">
+          <div :class="category === 'AWS' ? 'col-md-auto' : 'col-md-4'" v-for="skill in skills" :key="skill.name">
+            <img
+              :src="skill.github"
+              :alt="skill.name"
+              class="card-img-top img-fluid zoom-effect"
+              style="width: 150px; height: 150px"
+              @click="skill.pdf && openPdf(skill.pdf)" 
+            />
+            <div class="card-body">
+              <h5>{{ skill.name }}</h5>
+              <a v-if="skill.pdf" :href="skill.pdf" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
+                View Certificates
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies Section -->
+    <div class="case-studies-section" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="section-title">Case Studies</h2>
+      <div v-for="(caseStudies, category) in groupedCaseStudies" :key="category" class="category-section">
+        <h3 class="category-title">{{ category }}</h3>
+        <div class="row justify-content-center">
+          <div class="col-md-4" v-for="caseStudy in caseStudies" :key="caseStudy.name">
+            <div class="case-study-card">
+              <img
+                :src="caseStudy.github"
+                :alt="caseStudy.name"
+                class="card-img-top img-fluid"
+                style="width: 150px; height: 150px"
+              />
+              <div class="card-body">
+                <h5>{{ caseStudy.name }}</h5>
+                <a :href="caseStudy.link" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
+                  View Case Study
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -26,11 +54,13 @@
 </template>
 
 
+
 <script>
 export default {
   data() {
     return {
       skillsData: [],
+      caseStudiesData: [], // Store the case studies data
     };
   },
   computed: {
@@ -43,22 +73,112 @@ export default {
         return groups;
       }, {});
     },
+    groupedCaseStudies() {
+      return this.caseStudiesData.reduce((groups, caseStudy) => {
+        if (!groups[caseStudy.category]) {
+          groups[caseStudy.category] = [];
+        }
+        groups[caseStudy.category].push(caseStudy);
+        return groups;
+      }, {});
+    },
   },
   mounted() {
-    fetch(
-      "https://jords-springy.github.io/first_api/data/index.json?_=" +
-        new Date().getTime()
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.skillsData = data.skills;
-      })
-      .catch((error) => console.error(error));
+    this.fetchData();
   },
+  methods: {
+    fetchData() {
+      fetch("https://jords-springy.github.io/first_api/data/index.json?_=" + new Date().getTime())
+        .then((response) => response.json())
+        .then((data) => {
+          this.skillsData = data.skills;
+          this.caseStudiesData = data.caseStudies; // Store the case studies data from API
+        })
+        .catch((error) => console.error(error));
+    },
+    openPdf(pdfLink) {
+      window.open(pdfLink, '_blank');
+    }
+  }
 };
 </script>
 
+
+
 <style>
+
+/* Skills Section */
+.skills-section, .case-studies-section {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.zoom-effect {
+  animation: zoom-effect 3s infinite;
+}
+
+@keyframes zoom-effect {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Case Study Styles */
+.case-study-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* For larger screens */
+@media (min-width: 1200px) {
+  .skills-section, .case-studies-section {
+    padding: 80px 0;
+  }
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* For medium screens */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .skills-section, .case-studies-section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .skills-section, .case-studies-section {
+    padding: 40px 0;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+.aws-category {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .btn-light {
   border: none;
   color: #6d5b67;
