@@ -8,16 +8,16 @@
         paddingTop: '60px',
         maxWidth: '100%',
         margin: '0 auto',
-        backgroundSize: 'cover',
+        backgroundSize: 'cover'
       }"
     >
       <div class="projects-section" data-aos="flip-up" data-aos-duration="3000">
         <h2 class="section-title" data-aos="flip-up" data-aos-duration="3000">
           My Projects
         </h2>
-        <div class="row">
+        <div class="row justify-content-center">
           <div
-            class="col-md-4"
+            class="col-6 col-md-4 mb-3" 
             v-for="project in projectsData"
             :key="project.name"
           >
@@ -26,14 +26,13 @@
                 :src="project.image"
                 :alt="project.name"
                 class="card-img-top img-fluid"
-                style="width: 500px; height: 150px"
               />
               <div class="card-body">
                 <h5>{{ project.name }}</h5>
                 <p>{{ project.description }}</p>
                 <div class="links">
-                  <a :href="project.github" target="_blank">GitHub</a>
-                  <a :href="project.vercel" target="_blank">Live Demo</a>
+                  <a :href="project.github" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">GitHub</a>
+                  <a :href="project.vercel" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">Live Demo</a>
                 </div>
               </div>
             </div>
@@ -67,13 +66,13 @@ export default {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
-  margin: 16px;
   text-align: center;
-  width: 250px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: inline-block;
   transition: transform 0.3s;
+  width: 100%; /* Set width to 100% for full utilization of the column */
+  max-width: 300px; /* Adjust this to match the case study card width */
+  margin: 0 auto; /* Center the card within the column */
 }
 
 .project-card:hover {
@@ -83,7 +82,7 @@ export default {
 
 .project-card img {
   width: 100%;
-  height: 150px;
+  height: 150px; /* Fixed height to maintain uniformity */
   object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
@@ -94,61 +93,58 @@ export default {
   margin-top: 10px;
 }
 
-.links a {
-  margin: 5px;
-  text-decoration: none;
-  color: lightslategray;
-}
-
-.links a:hover {
-  color:white;
-  background-color:grey;
+.btn-light {
+   border: none;
+  color: #6d5b67;
+  transition: background-color 0.3s, color 0.3s;
   border-radius: 1rem;
 }
 
-/* For screens larger than 1200px */
+.btn-light:hover {
+  background-color: grey; /* Change the background color on hover */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Media Queries */
 @media (min-width: 1200px) {
-  .project-card {
-    width: 300px;
-  }
   .project-card img {
     height: 180px;
   }
 }
 
-/* For screens between 768px and 1200px */
 @media (min-width: 768px) and (max-width: 1200px) {
-  .project-card {
-    width: 250px;
-  }
   .project-card img {
     height: 150px;
   }
 }
 
-/* For screens smaller than 768px */
 @media (max-width: 768px) {
-  .project-card {
-    width: 200px;
-  }
   .project-card img {
     height: 120px;
   }
+  
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
-/* For screens smaller than 300px */
 @media (max-width: 300px) {
-  .project-card {
-    width: 150px;
-  }
   .project-card img {
     height: 90px;
   }
+  
   .links {
     flex-direction: column;
   }
-  .links a {
+  
+  .btn-light {
     margin: 10px;
+    width: 100%; /* Make buttons full width on small screens */
   }
 }
 </style>

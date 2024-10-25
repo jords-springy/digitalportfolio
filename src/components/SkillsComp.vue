@@ -12,7 +12,7 @@
               :alt="skill.name"
               class="card-img-top img-fluid zoom-effect"
               style="width: 150px; height: 150px"
-              @click="skill.pdf && openPdf(skill.pdf)" 
+              @click="skill.pdf && openPdf(skill.pdf)"
             />
             <div class="card-body">
               <h5>{{ skill.name }}</h5>
@@ -30,19 +30,22 @@
       <h2 class="section-title">Case Studies</h2>
       <div v-for="(caseStudies, category) in groupedCaseStudies" :key="category" class="category-section">
         <h3 class="category-title">{{ category }}</h3>
-        <div class="row justify-content-center">
-          <div class="col-md-4" v-for="caseStudy in caseStudies" :key="caseStudy.name">
+        <div class="row justify-content-center flex-wrap">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" v-for="caseStudy in caseStudies" :key="caseStudy.name">
             <div class="case-study-card">
               <img
                 :src="caseStudy.github"
                 :alt="caseStudy.name"
-                class="card-img-top img-fluid"
-                style="width: 150px; height: 150px"
+                class="card-img-top img-fluid zoom-effect"
+                style="width: 100%; height: auto;"
               />
               <div class="card-body">
                 <h5>{{ caseStudy.name }}</h5>
-                <a :href="caseStudy.link" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
+                <a v-if="caseStudy.link" :href="caseStudy.link" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
                   View Case Study
+                </a>
+                <a v-if="caseStudy.pdf" :href="caseStudy.pdf" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
+                  Download PDF
                 </a>
               </div>
             </div>
@@ -52,8 +55,6 @@
     </div>
   </div>
 </template>
-
-
 
 <script>
 export default {
@@ -92,7 +93,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.skillsData = data.skills;
-          this.caseStudiesData = data.caseStudies; // Store the case studies data from API
+          this.caseStudiesData = data.caseStudies;
         })
         .catch((error) => console.error(error));
     },
@@ -103,11 +104,8 @@ export default {
 };
 </script>
 
-
-
 <style>
-
-/* Skills Section */
+/* Skills and Case Studies Sections */
 .skills-section, .case-studies-section {
   background-color: #fff;
   padding: 60px 0;
@@ -117,6 +115,7 @@ export default {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .zoom-effect {
@@ -135,136 +134,87 @@ export default {
   }
 }
 
-/* Case Study Styles */
+/* Case Study Card Styles */
 .case-study-card {
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition on hover */
 }
 
-/* For larger screens */
-@media (min-width: 1200px) {
-  .skills-section, .case-studies-section {
-    padding: 80px 0;
-  }
-  .section-title {
-    font-size: 3rem;
-  }
+.case-study-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-/* For medium screens */
-@media (min-width: 768px) and (max-width: 1200px) {
-  .skills-section, .case-studies-section {
-    padding: 60px 0;
-  }
-  .section-title {
-    font-size: 2.5rem;
-  }
+/* Responsive Spacing for Cards */
+.row.justify-content-center {
+  gap: 20px; /* Adds space between columns */
 }
 
-/* For smaller screens */
-@media (max-width: 768px) {
-  .skills-section, .case-studies-section {
-    padding: 40px 0;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
-}
-
-.aws-category {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
+/* Button Styles */
 .btn-light {
   border: none;
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Center Content in Card Body */
 .card-body {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  text-align: center; /* Center text */
-  justify-content: center; /* Center vertically */
-  height: 100%; /* Full height */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
 }
 
-.skills-section {
-  background-color: #fff;
-  padding: 60px 0;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.zoom-effect {
-  animation: zoom-effect 3s infinite;
-}
-
-@keyframes zoom-effect {
-  0% {
-    transform: scale(0.8);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(0.8);
-  }
-}
-
-/* For screens larger than 1200px */
-@media (min-width: 1200px) {
-  .skills-section {
-    padding: 80px 0;
-  }
-  .skills-section .section-title {
-    font-size: 3rem;
-  }
-}
-
-/* For screens between 768px and 1200px */
-@media (min-width: 768px) and (max-width: 1200px) {
-  .skills-section {
-    padding: 60px 0;
-  }
-  .skills-section .section-title {
-    font-size: 2.5rem;
-  }
-}
-
-/* For screens smaller than 768px */
-@media (max-width: 768px) {
-  .skills-section {
-    padding: 40px 0;
-  }
-  .skills-section .section-title {
-    font-size: 2rem;
-  }
-}
-
-/* For screens smaller than 300px */
-@media (max-width: 300px) {
-  .skills-section {
-    padding: 20px 0;
-  }
-  .skills-section .section-title {
-    font-size: 1.5rem;
-  }
-}
-
-/* Center the AWS category skills */
+/* AWS Category Flex */
 .aws-category {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .skills-section, .case-studies-section {
+    padding: 80px 0;
+  }
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .skills-section, .case-studies-section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .skills-section, .case-studies-section {
+    padding: 40px 0;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 300px) {
+  .skills-section, .case-studies-section {
+    padding: 20px 0;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
 }
 </style>
