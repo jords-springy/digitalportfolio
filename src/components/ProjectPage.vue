@@ -76,8 +76,8 @@ export default {
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  background-color: #f8f9fa;
+   transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .project-card img {
