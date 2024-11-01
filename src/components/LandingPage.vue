@@ -21,7 +21,7 @@
                 </div>
               </h2>
               <h4 class="card-text" style="color: #6d5b67">
-                A Life Choices Student + Aspiring Web Developer
+                A LC Studio Intern + Aspiring Web Developer
               </h4>
               <button
                 class="btn btn-light mt-3"
