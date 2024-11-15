@@ -4,6 +4,7 @@
     <div class="skills-section" data-aos="zoom-out-up" data-aos-duration="1500">
       <h2 class="section-title">My Skills</h2>
       <div v-for="(skills, category) in groupedSkills" :key="category" class="category-section">
+      <br><br>
         <h3 class="category-title">{{ category }}</h3>
         <div class="row justify-content-center" :class="{ 'aws-category': category === 'AWS' }">
           <div :class="category === 'AWS' ? 'col-md-auto' : 'col-md-4'" v-for="skill in skills" :key="skill.name">
@@ -16,6 +17,9 @@
             />
             <div class="card-body">
               <h5>{{ skill.name }}</h5>
+              <a v-if="skill.link" :href="skill.link" target="_blank" style="color: #6d5b67">
+                  View Credential
+                </a>
               <a v-if="skill.pdf" :href="skill.pdf" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
                 View Certificates
               </a>
