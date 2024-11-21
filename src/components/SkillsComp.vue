@@ -41,7 +41,7 @@
                 :src="caseStudy.github"
                 :alt="caseStudy.name"
                 class="card-img-top img-fluid zoom-effect"
-                style="width: 100%; height: auto;"
+                style="width: 275px; height: 275px;"
               />
               <div class="card-body">
                 <h5>{{ caseStudy.name }}</h5>
