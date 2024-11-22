@@ -76,7 +76,7 @@ export default {
 }
 
 .project-card:hover {
-   transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
@@ -94,10 +94,12 @@ export default {
 }
 
 .btn-light {
-   border: none;
+  border: none;
   color: #6d5b67;
   transition: background-color 0.3s, color 0.3s;
   border-radius: 1rem;
+  padding: 8px 16px; /* Adjust padding for a better button size */
+  font-size: 14px; /* Adjust font size */
 }
 
 .btn-light:hover {
@@ -127,24 +129,32 @@ export default {
   .project-card img {
     height: 120px;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
+
+  .btn-light {
+    padding: 6px 12px; /* Adjust button padding for medium screens */
+    font-size: 12px; /* Adjust font size for medium screens */
+  }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 480px) {
   .project-card img {
     height: 90px;
   }
-  
+
   .links {
-    flex-direction: column;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center the buttons */
   }
-  
+
   .btn-light {
-    margin: 10px;
-    width: 100%; /* Make buttons full width on small screens */
+    margin: 5px 0; /* Add vertical margin to space out the buttons */
+    width: 80%; /* Make buttons full width on small screens */
+    padding: 6px 12px; /* Adjust padding for smaller buttons */
+    font-size: 12px; /* Adjust font size for smaller buttons */
   }
 }
 </style>

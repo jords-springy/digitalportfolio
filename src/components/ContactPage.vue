@@ -239,6 +239,7 @@ h2 {
 
 .formcarry-block {
   margin-bottom: 15px;
+  background-color: #F9F8F8;
 }
 
 
@@ -364,7 +365,7 @@ textarea {
   max-width: 300px;
   margin: auto;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: #F9F8F8;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
