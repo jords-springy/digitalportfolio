@@ -17,7 +17,7 @@
             />
             <div class="card-body">
               <h5>{{ skill.name }}</h5>
-              <a v-if="skill.link" :href="skill.link" target="_blank" style="color: #6d5b67">
+              <a v-if="skill.link" :href="skill.link" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">
                   View Credential
                 </a>
               <a v-if="skill.pdf" :href="skill.pdf" target="_blank" class="btn btn-light mt-3" style="color: #6d5b67">

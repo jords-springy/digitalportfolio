@@ -2,22 +2,40 @@
   <div>
     <div class="work-section" data-aos="zoom-out-up" data-aos-duration="1500">
       <h2 class="section-title work-section__title">Work Experience</h2>
-      <div
-        v-for="(experience, index) in workExperienceData"
-        :key="index"
-        class="work-section__content"
+      <button
+        @click="downloadCV"
+        class="btn btn-light mt-3"
+        style="color: #6d5b67"
       >
-        {{ experience.description }}
-        <br>
-        {{ experience.date }}
+        Download CV
+      </button>
+      <br />
+      <br />
+      <br />
+      <div class="timeline">
+        <div
+          v-for="(experience, index) in workExperienceData"
+          :key="index"
+          :class="['timeline-item', index % 2 === 0 ? 'left' : 'right']"
+        >
+          <div class="content">
+            <img
+              :src="experience.contact.github"
+              alt="Work Logo"
+              class="work-logo"
+            />
+            <h4>{{ experience.placeOfWork }}</h4>
+            <h5>{{ experience.description }}</h5>
+            <p>{{ experience.date }}</p>
+          </div>
+        </div>
       </div>
       <br />
-      <button @click="downloadCV" class="btn btn-light mt-3" style="color: #6d5b67">Download CV</button>
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 export default {
   data() {
     return {
@@ -55,8 +73,14 @@ export default {
   },
 };
 </script>
-  
-  <style>
+
+<style>
+.work-logo {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
 .work-section {
   background-color: #fff;
   padding: 60px 0;
@@ -65,11 +89,69 @@ export default {
 .work-section__title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.work-section__content {
-  font-size: 1.1rem;
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #6d5b67;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 10px 40px;
+  width: 50%;
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item .content {
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50%; /* Center the dot horizontally */
+  transform: translateX(-50%); /* Offset to ensure the dot is centered */
+  background-color: #6d5b67;
+  border: 4px solid #f4f0ec;
+  top: 100px;  /* Adjust to control vertical placement */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left::before {
+  left: 100%; /* Center the dot horizontally for left-side items */
+}
+
+.timeline-item.right::before {
+  left: 0%; /* Center the dot horizontally for right-side items */
 }
 
 .btn-light {
@@ -79,56 +161,52 @@ export default {
   border-radius: 1rem;
 }
 
-.btn-light:hover{
-  color:#f4f0ec
+.btn-light:hover {
+  color: #f4f0ec;
 }
 
-/* Media query for 1200px */
-@media (max-width: 1200px) {
- .work-section {
-    padding: 40px 0;
-  }
- .work-section__title {
-    font-size: 2rem;
-  }
- .work-section__content {
-    font-size: 1rem;
-  }
-  button {
-    padding: 8px 16px;
-  }
-}
-
-/* Media query for 768px */
+/* Media Queries */
 @media (max-width: 768px) {
- .work-section {
-    padding: 20px 0;
+  .work-section {
+    padding: 30px 0; /* Reduce padding on mobile */
   }
- .work-section__title {
-    font-size: 1.8rem;
-  }
- .work-section__content {
-    font-size: 0.9rem;
-  }
-  button {
-    padding: 6px 12px;
-  }
-}
 
-/* Media query for 300px */
-@media (max-width: 300px) {
- .work-section {
-    padding: 10px 0;
+  .work-section__title {
+    font-size: 2rem; /* Adjust title size for smaller screens */
   }
- .work-section__title {
-    font-size: 1.5rem;
+
+  .timeline {
+    max-width: 100%; /* Allow full-width on smaller screens */
+    padding: 0 10px;
   }
- .work-section__content {
-    font-size: 0.7rem;
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  button {
-    padding: 4px 8px;
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item::before {
+    left: 50%; /* Center the dots */
+    top: 80px; /* Lower the dots slightly for mobile */
+  }
+
+  .work-logo {
+    max-width: 80px; /* Reduce logo size on mobile */
+  }
+
+  .btn-light {
+    width: 100%; /* Make the button full-width on mobile */
+    margin-top: 20px;
   }
 }
 </style>
-  

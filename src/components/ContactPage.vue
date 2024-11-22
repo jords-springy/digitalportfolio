@@ -232,7 +232,7 @@ h2 {
   max-width: 500px;
   margin: auto;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: #F9F8F8;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -247,7 +247,7 @@ input,
 textarea {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #F9F8F8;
   border-radius: 4px;
 }
 
@@ -273,7 +273,7 @@ textarea {
 
 
 .formcarry-message-block {
-  background-color: #f8d7da;
+  background-color: #F9F8F8;
   border: 1px solid #f5c6cb;
   color: #721c24;
   padding: 10px;
