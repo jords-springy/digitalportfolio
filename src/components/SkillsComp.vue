@@ -41,7 +41,7 @@
                 :src="caseStudy.github"
                 :alt="caseStudy.name"
                 class="card-img-top img-fluid zoom-effect"
-                style="width: 400px; height: 300px;"
+                style="width: 400px; height: 400px;"
               />
               <div class="card-body">
                 <h5>{{ caseStudy.name }}</h5>
@@ -190,6 +190,10 @@ export default {
   .section-title {
     font-size: 3rem;
   }
+  .case-study-card img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Medium Screens */
@@ -199,6 +203,10 @@ export default {
   }
   .section-title {
     font-size: 2.5rem;
+  }
+  .case-study-card img {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -210,6 +218,17 @@ export default {
   .section-title {
     font-size: 2rem;
   }
+  .case-study-card {
+    width: 100%;
+  }
+  .case-study-card img {
+    width: 100%;
+    height: auto;
+  }
+  .col-12.col-sm-6.col-md-4.col-lg-3 {
+    width: 100%;
+    padding: 10px 0;
+  }
 }
 
 /* Extra Small Screens */
@@ -220,5 +239,17 @@ export default {
   .section-title {
     font-size: 1.5rem;
   }
+  .case-study-card {
+    width: 100%;
+  }
+  .case-study-card img {
+    width: 100%;
+    height: auto;
+  }
+  .col-12.col-sm-6.col-md-4.col-lg-3 {
+    width: 100%;
+    padding: 10px 0;
+  }
 }
+
 </style>
